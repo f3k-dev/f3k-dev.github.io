@@ -1,0 +1,25 @@
+.about__cards{display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px}
+
+
+
+/* ==== Profile inline link pills (modern, glassy) ==== */
+.section--about .card p{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.pill-link{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 12px; border-radius:999px; font-weight:600; font-size:.95rem;
+  border:1px solid var(--glass-border); background: var(--glass-bg);
+  backdrop-filter: blur(8px); box-shadow: 0 6px 16px rgba(44,61,88,.10);
+  text-decoration:none; color: var(--text); transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease; 
+}
+.pill-link i{ font-size: .95em; }
+.pill-link:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(44,61,88,.16); background: var(--grad-1); color: white; }
+.pill-link:hover i{ color: inherit; }
+
+.section--about > .container > .card{ padding-bottom: 22px;}
+.section--about > .container > .card p{ margin: 16px 0 6px 0; }
+
+
+
+.about__meta{display:grid; gap:6px; padding:0; margin:0 0 16px 0; list-style:none}
+.about__meta li{display:grid; grid-template-columns: 100px 1fr; gap:10px}
+.about__meta .k{color: var(--muted)}

@@ -1,0 +1,37 @@
+/* Links */
+.links{display:flex; flex-wrap:wrap; gap:10px; padding:0; list-style:none}
+
+.section--links p{
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+
+
+
+/* SNSリンク用カラー設定 */
+.sns-instagram i { color: #E4405F; }
+.sns-facebook i { color: #1877F2; }
+.sns-x i { color: #000000; }
+.sns-github i { color: #333333; }
+
+.links{
+    margin: 0 10px;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #252525;
+}
+
+.links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+

@@ -1,0 +1,114 @@
+:root{
+  --bg: #f6f7fb;
+  --text: #1c2230;
+  --muted: #5e6b85;
+
+  --primary: #86b3f4;      /* 淡い青 */
+  --accent: #f7a6c2;       /* 淡いピンク */
+  --mint: #a8e6cf;         /* ミント */
+  --sun: #ffd3b6;          /* サンセット */
+  --iris: #bdb2ff;         /* ラベンダー */
+
+  --grad-1: linear-gradient(135deg, var(--primary), var(--iris));
+  --grad-2: linear-gradient(135deg, #f2fffa, var(--sun));
+
+  --grad-3: linear-gradient(180deg, #244e88, #cfe3ff);
+  --grad-4: linear-gradient(180deg, #cfe3ff, #cfebff);
+  --glass-bg: rgba(255, 255, 255, 0.68);
+  --glass-border: rgba(255,255,255,0.6);
+
+  --container: 1100px;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(44,61,88,.15);
+}
+
+*{box-sizing: border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+  color: var(--text);
+  /* background:
+    radial-gradient(60% 40% at 10% 10%, rgba(134,179,244,.25), transparent 60%),
+    radial-gradient(50% 40% at 90% 20%, rgba(183, 148, 244, .22), transparent 60%),
+    radial-gradient(30% 30% at 50% 100%, rgba(168, 230, 207, .20), transparent 60%),
+    var(--bg); */
+  line-height: 1.65;
+}
+
+.margin-top0 { margin-top: 0; } 
+
+/* Layout helpers */
+.container{width:min(100% - 2rem, var(--container)); margin-inline:auto}
+.section{padding: 20px 0}
+.section--hero{padding-top: 40px; padding-bottom: 40px; background: var(--grad-3)}
+.section--about{padding-top: 40px; padding-bottom: 40px; background: linear-gradient(90deg, rgba(228, 236, 236, 0.268), rgba(179, 153, 200, 0.146))}
+.section--awards{background: linear-gradient(175deg, #f6fff8, #fff2cd)}
+.section--links{background: #dbe3e9;}
+/* .section--yellow{background: linear-gradient(135deg, rgba(197, 237, 158, 0.527), rgba(255, 199, 142, 0.406))} */
+.section--experience{background: linear-gradient(180deg, rgba(202, 244, 255, 0.762), rgba(72, 84, 255, 0.406))}
+
+.section__title{
+  font-size: clamp(26px, 3.2vw, 34px);
+  margin: 0 0 10px 10px;
+  letter-spacing: .02em;
+}
+.lead{font-size: 18px; color: var(--muted); margin-top:-8px;}
+
+/* Topbar */
+.topbar{
+  position: sticky; top: 0; z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--glass-border);
+}
+.topbar__inner{
+  display:flex; align-items:center; justify-content:space-between; gap: 18px; padding: 10px 0;
+}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
+.brand__logo{font-size: 22px}
+.brand__name{font-weight:700}
+.nav{display:flex; gap:14px; margin-left:auto}
+.nav a{padding:8px 10px; text-decoration:none; color:inherit; border-radius:12px}
+.nav a:hover{background: rgba(255,255,255,.4)}
+.lang-switch{display:flex; gap:8px; margin-left: 8px}
+.chip{
+  border:1px solid var(--glass-border); background: var(--glass-bg); border-radius:999px;
+  padding:8px 12px; cursor:pointer; box-shadow: var(--shadow);
+}
+.chip[aria-pressed="true"]{outline: 2px solid #0000; box-shadow: 0 0 0 2px white inset, 0 0 0 4px rgba(0,0,0,.05)}
+
+
+
+/* Cards & Glass */
+.glass{
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+}
+.card{padding: 6px 24px; border-radius: var(--radius)}
+.cards{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; padding:0; list-style:none}
+
+
+
+
+/* Footer */
+.footer{padding: 10px 0; text-align:center; color: var(--muted); background: #dbe3e9;}
+.footer p{margin-top: 0;}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero__grid{grid-template-columns: 1fr}
+  .nav{display:none}
+  .hero__photo img{width: 200px; height: auto;}
+}
+@media (max-width: 520px){
+  /* .section{padding: 72px 0} */
+  .hero__meta li{grid-template-columns: 80px 1fr}
+}
+
+
+
+
+
+@media (max-width: 520px){
+  .pill-link{ padding:6px 10px; font-size:.9rem; }
+}

@@ -1,0 +1,164 @@
+#hero {
+  height: calc(100vh - 100px); /* 画面全体の高さ 64 */
+  min-height: 650px; /* 最小の高さを設定 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* アニメーションではみ出た部分を隠す */
+  position: relative; /* スクロールダウンボタンの位置基準 */
+
+  /* --- Soft blue gradient theme --- */
+  /* background: radial-gradient(900px 600px at 10% 120%, rgba(135, 206, 250, 0.45), rgba(255, 255, 255, 0))
+            ,radial-gradient(850px 650px at 90% -10%, rgba(173, 216, 230, 0.45), rgba(255,255,255,0))
+            ,linear-gradient(135deg, #e0f3ff 0%, #a8c9ff 50%, #7fa7ff 100%); */
+  background-blend-mode: screen, screen, normal;
+  filter: saturate(1.15);
+}
+
+
+
+/* ヒーローセクションのメインコンテンツ用コンテナ */
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* プロフィール写真 */
+.hero__photo {
+  width: 150px; /* サイズを調整 */
+  height: 150px;
+  border-radius: 50%; /* 画像を丸くする */
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+  border: 3px solid #fff; /* 白い縁取り */
+}
+
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* テキストコンテンツ */
+.hero__content {
+  /* 元の .glass スタイルを無効化する場合 */
+  background: none;
+  backdrop-filter: none;
+  box-shadow: none;
+  padding: 0;
+  border: none;
+}
+
+.hero__furigana {
+  font-size: 1rem;
+  color: #334;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.hero__name {
+  font-size: 3rem; /* 名前を大きく */
+  margin: 0 0 0 0;
+  font-weight: 700;
+  color: #1a2b48; /* メインカラー */
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+}
+
+.hero__affil {
+  font-size: 1.15rem;
+  color: #334;
+  margin: 30px 0 0 0;
+  font-weight: 400;
+}
+
+.hero__bio {
+  font-size: 1rem;
+  color: #445;
+  max-width: 600px;
+  margin: 10px 0 0 0;
+  line-height: 1.6;
+}
+
+/* --- アニメーションの基本設定 --- */
+.animated-item {
+  opacity: 0; /* JSでアニメーションが適用されるまで非表示 */
+  animation-fill-mode: forwards; /* アニメーション終了時の状態を維持 */
+}
+
+/* --- アニメーション定義 (Keyframes) --- */
+
+/* 下からフェードイン */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* スクロールダウン矢印のバウンス */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  40% {
+    transform: translateY(-14px) rotate(-45deg);
+  }
+  60% {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+
+/* --- スクロールダウンインジケーター --- */
+.scroll-down-link {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+  padding: 10px; /* クリック領域を広げる */
+  color: #fff;
+}
+
+.scroll-down-arrow {
+  width: 24px;
+  height: 24px;
+  border-left: 3px solid rgb(255, 255, 255);
+  border-bottom: 3px solid rgb(255, 255, 255);
+  transform: rotate(-45deg); /* 矢印の形 */
+  
+  /* アニメーションの適用（JS側でも設定するが、フォールバックとして） */
+  animation-name: bounce;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+
+
+/* ===== Starfield (shooting stars upward) ===== */
+.section--hero {
+  position: relative; /* canvas配置のため */
+  overflow: hidden;   /* 画面外に出る星を隠す */
+}
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 0;           /* 背景に配置 */
+  pointer-events: none; /* クリック透過 */
+}
