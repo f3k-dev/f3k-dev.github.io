@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="./styles/about.css" />
   <link rel="stylesheet" href="./styles/experience.css" />
   <link rel="stylesheet" href="./styles/awards.css" />
+  <link rel="stylesheet" href="./styles/portfolio.css" />
   <link rel="stylesheet" href="./styles/publications.css" />
   <link rel="stylesheet" href="./styles/links.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="description" content="Personal portfolio">
 </head>
+
 <body>
   <header class="topbar glass">
     <div class="container topbar__inner">
@@ -28,6 +31,7 @@
         <a href="#about" data-ja="プロフィール" data-en="Profile"></a>
         <a href="#experience" data-ja="経歴" data-en="Experience">経歴</a>
         <a href="#awards" data-ja="受賞" data-en="Awards">受賞</a>
+        <a href="#portfolio" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</a>
         <a href="#publications" data-ja="研究論文" data-en="Publications">研究論文</a>
         <a href="#links" data-ja="リンク" data-en="Links">リンク</a>
       </nav>
@@ -47,15 +51,19 @@
         <img src="assets/face.png" alt="プロフィール写真 / Profile photo" />
       </div>
       <div class="hero__content">
-        <p class="hero__furigana animated-item" data-animation="fade-in-up" data-delay="0.4s" data-ja="ふたみ かずま" data-en="ふたみ かずま"></p>
-        <h1 class="hero__name animated-item" data-animation="fade-in-up" data-delay="0.6s" data-ja="二見 和磨" data-en="Kazuma Futami"></h1>
-        <p class="hero__affil animated-item" data-animation="fade-in-up" data-delay="0.8s" data-ja="九州工業大学 工学部 電気電子工学科 4年" data-en="Kyushu Institute of Technology 4th grade"></p>
-        <p class="hero__bio animated-item" data-animation="fade-in-up" data-delay="1.0s" 
-           data-ja="はじめまして！大学では ロボット・AI分野の研究をしています．"
-           data-en="Hi! I'm Kazuma Futami. Nice to meet you! I'm researching the field of robotics and AI at the university."></p>
+        <p class="hero__furigana animated-item" data-animation="fade-in-up" data-delay="0.4s" data-ja="ふたみ かずま"
+          data-en="ふたみ かずま"></p>
+        <h1 class="hero__name animated-item" data-animation="fade-in-up" data-delay="0.6s" data-ja="二見 和磨"
+          data-en="Kazuma Futami"></h1>
+        <p class="hero__affil animated-item" data-animation="fade-in-up" data-delay="0.8s"
+          data-ja="九州工業大学 工学部 電気電子工学科 4年" data-en="Kyushu Institute of Technology 4th grade"></p>
+        <p class="hero__bio animated-item" data-animation="fade-in-up" data-delay="1.0s"
+          data-ja="はじめまして！大学では ロボット・AI分野の研究をしています．"
+          data-en="Hi! I'm Kazuma Futami. Nice to meet you! I'm researching the field of robotics and AI at the university.">
+        </p>
       </div>
     </div>
-    
+
     <a href="#about" class="scroll-down-link" aria-label="Scroll down to about section">
       <div class="scroll-down-arrow" data-animation="bounce" data-delay="1.5s"></div>
     </a>
@@ -69,53 +77,59 @@
         <h3 data-ja="プロフィール" data-en="Profile"></h3>
 
         <p data-ja="九州工業大学 工学部 電気電子工学科 4年" data-en="Kyushu Institute of Technology 4th grade, Tamukoh Lab"></p>
-          <a class="pill-link" href="https://www.kyutech.ac.jp/" target="_blank" rel="noopener">
-            <i class="fa-solid fa-building-columns"></i>
-            <span data-ja="九州工業大学" data-en="Kyutech"></span>
-          </a>
-          <a class="pill-link" href="https://www.brain.kyutech.ac.jp/~tamukoh/" target="_blank" rel="noopener">
-            <i class="fa-solid fa-flask"></i>
-            <span data-ja="田向研究室" data-en="Tamukoh Lab"></span>
-          </a>
-        
-        <p data-ja="特定非営利活動法人 Fukuoka Robotics Challenge 副代表理事" data-en="Vice Chairman of the Board of Directors, Fukuoka Robotics Challenge (NPO)"></p>
-          <a class="pill-link" href="https://fukuokarc.org/" target="_blank" rel="noopener">
-            <i class="fa-solid fa-link"></i>
-            <span data-ja="Fukuoka Robotics Challenge" data-en=""></span>
-          </a>
-        
+        <a class="pill-link" href="https://www.kyutech.ac.jp/" target="_blank" rel="noopener">
+          <i class="fa-solid fa-building-columns"></i>
+          <span data-ja="九州工業大学" data-en="Kyutech"></span>
+        </a>
+        <a class="pill-link" href="https://www.brain.kyutech.ac.jp/~tamukoh/" target="_blank" rel="noopener">
+          <i class="fa-solid fa-flask"></i>
+          <span data-ja="田向研究室" data-en="Tamukoh Lab"></span>
+        </a>
+
+        <p data-ja="特定非営利活動法人 Fukuoka Robotics Challenge 副代表理事"
+          data-en="Vice Chairman of the Board of Directors, Fukuoka Robotics Challenge (NPO)"></p>
+        <a class="pill-link" href="https://fukuokarc.org/" target="_blank" rel="noopener">
+          <i class="fa-solid fa-link"></i>
+          <span data-ja="Fukuoka Robotics Challenge" data-en=""></span>
+        </a>
+
         <p data-ja="Hibikino-Musashi@Home (HMA)" data-en=""></p>
-          <a class="pill-link" href="https://www.brain.kyutech.ac.jp/~hma/ja/hibikino-musashihome/" target="_blank" rel="noopener">
-            <i class="fa-solid fa-link"></i>
-            <span data-ja="HMA Official" data-en=""></span>
-          </a>
-        
+        <a class="pill-link" href="https://www.brain.kyutech.ac.jp/~hma/ja/hibikino-musashihome/" target="_blank"
+          rel="noopener">
+          <i class="fa-solid fa-link"></i>
+          <span data-ja="HMA Official" data-en=""></span>
+        </a>
+
       </article>
       <br>
 
 
       <div class="about__cards">
 
-        
+
 
         <article class="card glass">
           <h3 data-ja="基本情報" data-en="Basic Information"></h3>
           <ul class="about__meta">
             <li><span class="k" data-ja="年齢" data-en="Age"></span><span class="v" data-ja="22" data-en="22"></span></li>
-            <li><span class="k" data-ja="居住地" data-en="Location"></span><span class="v" data-ja="福岡県 / 北九州市" data-en="Kitakyushu City, Fukuoka, Japan">VLA, 視覚ナビ, ROS2</span></li>
-            <li><span class="k" data-ja="出身地" data-en="Hometown"></span><span class="v" data-ja="京都府 / 大山崎町" data-en="Oyamazaki Town, Kyoto, Japan">福岡・北九州</span></li>
+            <li><span class="k" data-ja="居住地" data-en="Location"></span><span class="v" data-ja="福岡県 / 北九州市"
+                data-en="Kitakyushu City, Fukuoka, Japan">VLA, 視覚ナビ, ROS2</span></li>
+            <li><span class="k" data-ja="出身地" data-en="Hometown"></span><span class="v" data-ja="京都府 / 大山崎町"
+                data-en="Oyamazaki Town, Kyoto, Japan">福岡・北九州</span></li>
           </ul>
         </article>
 
         <article class="card glass">
           <h3 data-ja="開発スキル" data-en="Development skills"></h3>
-          <p data-ja="" data-en="HTML/CSS (This page is self-made😎), Node.js, Dart (Flutter), C/C++, ROS2, Python, EV3/SPIKE"></p>
+          <p data-ja=""
+            data-en="HTML/CSS (This page is self-made😎), Node.js, Dart (Flutter), C/C++, ROS2, Python, EV3/SPIKE"></p>
         </article>
 
         <article class="card glass">
           <h3 data-ja="趣味" data-en="Hobby"></h3>
           <p data-ja="アプリ開発，Google map，" data-en="App Development, Google map,"></p>
-          <p class="margin-top0" data-ja="旅行 🇸🇬🇦🇺🇰🇷🇹🇭🇭🇰🇹🇼🇨🇳🇹🇷🇪🇬" data-en="Travel  🇸🇬🇦🇺🇰🇷🇹🇭🇭🇰🇹🇼🇨🇳🇹🇷🇪🇬"></p>
+          <p class="margin-top0" data-ja="旅行 🇸🇬🇦🇺🇰🇷🇹🇭🇭🇰🇹🇼🇨🇳🇹🇷🇪🇬"
+            data-en="Travel  🇸🇬🇦🇺🇰🇷🇹🇭🇭🇰🇹🇼🇨🇳🇹🇷🇪🇬"></p>
         </article>
 
         <!-- <article class="card glass">
@@ -138,8 +152,11 @@
           <div class="time">2026.04</div>
           <div class="dot"></div>
           <div class="content">
-            <h3 data-ja="九州工業大学 大学院 生命体工学研究科 入学（予定）" data-en="Admission to the Graduate School of Life Science and Engineering, Kyushu Institute of Technology"></h3>
-            <p data-ja="所属：人間知能システム工学専攻 田向研究室" data-en="Affiliation: Tamukoh Laboratory, Department of Human Intelligent Systems Engineering"></p>
+            <h3 data-ja="九州工業大学 大学院 生命体工学研究科 入学（予定）"
+              data-en="Admission to the Graduate School of Life Science and Engineering, Kyushu Institute of Technology">
+            </h3>
+            <p data-ja="所属：人間知能システム工学専攻 田向研究室"
+              data-en="Affiliation: Tamukoh Laboratory, Department of Human Intelligent Systems Engineering"></p>
           </div>
         </li>
 
@@ -147,7 +164,9 @@
           <div class="time">2026.03</div>
           <div class="dot"></div>
           <div class="content">
-            <h3 data-ja="九州工業大学 工学部 電気電子工学科 卒業（予定）" data-en="Graduated from the Department of Electrical and Electronic Engineering, Faculty of Engineering, Kyushu Institute of Technology"></h3>
+            <h3 data-ja="九州工業大学 工学部 電気電子工学科 卒業（予定）"
+              data-en="Graduated from the Department of Electrical and Electronic Engineering, Faculty of Engineering, Kyushu Institute of Technology">
+            </h3>
             <p data-ja="所属：電気システム工学コース" data-en="Major: Electrical Systems Engineering Course"></p>
           </div>
         </li>
@@ -172,10 +191,12 @@
 
         <article class="card glass">
           <h3 data-ja="過去のプロフィール" data-en="Past Profile"></h3>
-          <p data-ja="WRO Japan 公認 福岡予選会 実行委員長（2025）" data-en="WRO Japan Official Fukuoka Preliminary Committee Chair (2025)"></p>
-          <p data-ja="Co-Lab-Gears 九州 4期（2023）" data-en="A member or Co-Lab-Gears Kyushu 4th Term (2023)"></p>
+          <p data-ja="WRO Japan 公認 福岡予選会 実行委員長（2025）"
+            data-en="WRO Japan Official Fukuoka Preliminary Committee Chair (2025)"></p>
+          <p data-ja="Co-Lab-Gears 九州 4期（2023）" data-en="A member of Co-Lab-Gears Kyushu 4th Term (2023)"></p>
           <p data-ja="九州工業大学 明専寮 寮長（2023）" data-en="Kyushu Institute of Technology Meisen Dormitory Head (2023)"></p>
-          <p data-ja="東山中学・高等学校 ロボット研究会 部長（2018, 2020）" data-en="Higashiyama Junior and Senior High School Robotics Research Club President (2018, 2020)"></p>
+          <p data-ja="東山中学・高等学校 ロボット研究会 部長（2018, 2020）"
+            data-en="Higashiyama Junior and Senior High School Robotics Research Club President (2018, 2020)"></p>
         </article>
 
       </ol>
@@ -191,7 +212,8 @@
 
         <li class="card glass">
           <h3 data-ja="U-22 プログラミング・コンテスト 2024" data-en="U-22 Programming Contest 2024"></h3>
-          <p><span class="tag">2024</span> <span data-ja="経済産業省商務情報政策局長賞 & OBC賞" data-en="Award from the Ministry of METI Director General & OBC Award"></span></p>
+          <p><span class="tag">2024</span> <span data-ja="経済産業省商務情報政策局長賞 & OBC賞"
+              data-en="Award from the Ministry of METI Director General & OBC Award"></span></p>
         </li>
 
         <li class="card glass">
@@ -201,7 +223,8 @@
 
         <li class="card glass">
           <h3 data-ja="九州工業大学 学生表彰" data-en="Kyutech Students Award"></h3>
-          <p><span class="tag">2022</span> <span data-ja="工学部 優秀賞" data-en="Faculty of Engineering, Excellence Award"></span></p>
+          <p><span class="tag">2022</span> <span data-ja="工学部 優秀賞"
+              data-en="Faculty of Engineering, Excellence Award"></span></p>
         </li>
 
         <li class="card glass">
@@ -218,23 +241,98 @@
   </section>
 
 
+  <!-- Portfolio ----------------------------------------------->
+  <section id="portfolio" class="section section--portfolio">
+    <div class="container">
+      <!-- <h2 class="section__title" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</h2> -->
+      <div class="portfolio-cover card glass animated-item" data-animation="fade-in-up" data-delay="0.2s">
+        <div class="portfolio-cover__content">
+          <h3 data-en="Portfolio"></h3>
+          <p data-ja="Stacio等で開発したアプリケーションやサービスの一覧です。"
+            data-en="A portfolio of applications and services developed at Stacio and other projects."></p>
+          <a href="portfolio.html" class="portfolio-btn glass">
+            <span data-en="View Portfolio"></span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="portfolio-cover__visual">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <i class="fa-solid fa-layer-group cover-icon"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Publications ----------------------------------------------->
   <section id="publications" class="section section--publications">
     <div class="container">
-      <h2 class="section__title" data-ja="研究論文" data-en="Publications"></h2>
-      <ul class="pubs">
-        <li class="pub glass">
-          <div class="pub__meta">
-            <span class="pub__year">2025</span>
-            <span class="pub__venue" data-ja="学会名" data-en="Conference name"></span>
-          </div>
-          <div class="pub__body">
-            <h3 class="pub__title" data-ja="COMMING SOON" data-en=""></h3>
-            <p class="pub__authors" data-ja="" data-en="Kazuma Futami et al."></p>
-            <a class="link" href="#" data-ja="PDF" data-en="PDF">PDF</a>
-          </div>
-        </li>
-      </ul>
+      <h2 class="section__title" data-ja="研究論文" data-en="Publications">研究論文</h2>
+
+      <div class="pub-group">
+        <h3 class="pub__year-heading">2026</h3>
+        <ul class="pubs">
+          <!----------------------------------------------->
+          <li class="pub glass">
+            <div class="pub__number">[4]</div>
+            <div class="pub__content">
+              <p class="pub__text">
+                <span data-ja="Kazuma Futami, Yuga Yano, Hakaru Tamukoh"></span>, 
+                <span data-ja=", "></span>
+                <i data-ja="The 8th International Symposium on Neuromorphic AI Hardware"></i>, 
+                <span data-ja="2026"></span>. 
+                <a class="link" href="https://www.brain.kyutech.ac.jp/~neuro/" data-ja="[Link]"></a>
+              </p>
+            </div>
+          </li>
+          <!----------------------------------------------->
+        </ul>
+         <h3 class="pub__year-heading">2025</h3>
+        <ul class="pubs">
+          <!----------------------------------------------->
+          <li class="pub glass">
+            <div class="pub__number">[3]</div>
+            <div class="pub__content">
+              <p class="pub__text">
+                <span data-ja="Kazuma Futami, Yuga Yano, Hakaru Tamukoh"></span>, 
+                <!-- <span data-ja=", "></span> -->
+                <i data-ja="The 8th International Symposium on Neuromorphic AI Hardware"></i>, 
+                <span data-ja="2026"></span>. 
+                <a class="link" href="https://www.brain.kyutech.ac.jp/~neuro/" data-ja="[Link]"></a>
+              </p>
+            </div>
+          </li>
+           <!----------------------------------------------->
+          <li class="pub glass">
+            <div class="pub__number">[2]</div>
+            <div class="pub__content">
+              <p class="pub__text">
+                <span data-ja="二見 和磨, 矢野 優雅, 田向 権"></span>, 
+                <!-- <span data-ja=", "></span> -->
+                <i data-ja="第14回インテリジェントホームロボティクス研究会"></i>, 
+                <span data-ja="2026"></span>. 
+                <a class="link" href="https://www.i-homerobotics.org/" data-ja="[リンク]"></a>
+              </p>
+            </div>
+          </li>
+           <!----------------------------------------------->
+          <li class="pub glass">
+            <div class="pub__number">[1]</div>
+            <div class="pub__content">
+              <p class="pub__text">
+                <span data-ja="二見 和磨"></span>, 
+                <!-- <span data-ja=", "></span> -->
+                <i data-ja="九州工業大学 学位論文"></i>, 
+                <span data-ja="2026"></span>. 
+                <a class="link" data-ja="[非公開]"></a>
+              </p>
+            </div>
+          </li>
+          <!----------------------------------------------->
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -252,7 +350,8 @@
           </a>
         </li>
         <li>
-          <a class="chip link sns-facebook" href="https://www.facebook.com/profile.php?id=61580060428258" target="_blank" rel="noopener">
+          <a class="chip link sns-facebook" href="https://www.facebook.com/profile.php?id=61580060428258"
+            target="_blank" rel="noopener">
             <i class="fa-brands fa-facebook"></i> Facebook
           </a>
         </li>
@@ -280,4 +379,5 @@
 
   <script src="scripts.js"></script>
 </body>
+
 </html>

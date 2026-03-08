@@ -1,10 +1,121 @@
 /* Publications */
-.pubs{list-style:none; padding:0; margin:0; display:grid; gap:14px}
-.pub{display:grid; grid-template-columns: 120px 1fr; gap:16px; padding:16px; border-radius: var(--radius)}
-.pub__meta{display:flex; flex-direction:column; gap:6px}
-.pub__year{font-weight:700}
-.pub__title{margin:.2rem 0 .3rem 0}
-.link{color:#0b57d0; text-decoration:none}
-.link:hover{text-decoration:underline}
-.tag{display:inline-block; padding:.2rem .6rem; border-radius:999px; background:rgba(0,0,0,.06)}
+.section--publications {
+    background: linear-gradient(135deg, rgba(235, 245, 255, 0.4), rgba(225, 235, 245, 0.5));
+}
 
+.pub-group {
+    margin-bottom: 32px;
+}
+
+.pub__year-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-left: 10px;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.pubs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+}
+
+.pub {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    border-radius: var(--radius);
+}
+
+.pub__number {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 32px;
+}
+
+.pub__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.pub__text {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.pub__text strong {
+    font-weight: 600;
+}
+
+.pub__text i {
+    font-style: italic;
+    color: var(--muted);
+}
+
+.pub__links {
+    margin-top: 8px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pub__links .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    padding: 4px 12px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: var(--shadow);
+}
+
+.pub__links .chip:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.link {
+    color: #0b57d0;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.tag {
+    display: inline-block;
+    padding: .2rem .6rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, .06);
+}
+
+@media (max-width: 520px) {
+    .pub {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .pub__number {
+        font-size: 1.1rem;
+    }
+
+    .pub__title {
+        font-size: 1.05rem;
+    }
+}

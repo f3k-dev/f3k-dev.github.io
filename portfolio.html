@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-ja="Portfolio - Kazuma Futami" data-en="Portfolio - Kazuma Futami">Portfolio - Kazuma Futami</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/portfolio.css" />
+    <link rel="stylesheet" href="./styles/links.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="topbar glass">
+        <div class="container topbar__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__logo"></span>
+                <span class="brand__name" data-en="Kazuma Futami"></span>
+            </a>
+            <nav class="nav">
+                <a href="index.html#about" data-ja="プロフィール" data-en="Profile"></a>
+                <a href="index.html#experience" data-ja="経歴" data-en="Experience">経歴</a>
+                <a href="index.html#awards" data-ja="受賞" data-en="Awards">受賞</a>
+                <a href="index.html#portfolio" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</a>
+                <a href="index.html#publications" data-ja="研究論文" data-en="Publications">研究論文</a>
+                <a href="index.html#links" data-ja="リンク" data-en="Links">リンク</a>
+            </nav>
+            <div class="lang-switch">
+                <button id="btn-ja" class="chip" aria-pressed="true">JA</button>
+                <button id="btn-en" class="chip" aria-pressed="false">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="section section--portfolio-page">
+        <div class="container">
+            <div class="portfolio-header animated-item" data-animation="fade-in-up" data-delay="0.1s">
+                <h1 class="section__title" data-ja="開発事例" data-en="Products & Works">開発事例</h1>
+                <p class="lead" data-ja="Stacio等で開発したサービス・アプリの一例をご紹介します。"
+                    data-en="Here are some examples of services and applications developed at Stacio and others."></p>
+            </div>
+
+            <div class="project-list">
+                <!-- Project 1 -->
+                <article class="project-card glass animated-item" data-animation="fade-in-up" data-delay="0.2s">
+                    <div class="project-card__content">
+                        <h2 class="project-title" data-ja="【事例１】大学構内道案内アプリ" data-en="[Case 1] Campus Navigator"></h2>
+                        <p class="project-subtitle">〜 Campus Navigator 〜</p>
+                        <div class="project-tags">
+                            <span class="tag">WEB</span>
+                            <span class="tag">小規模アプリ</span>
+                        </div>
+                        <p class="project-desc"
+                            data-ja="このアプリは現在、九州工業大学戸畑キャンパスに導入させて頂いております。二次元コードを読み取って大学内の施設や講義室名を入力すると、その場所までの道案内が画像付きで表示されます。研究室の検索やタグ検索にも対応しています。新入生や新学期が始まる時期に多くの学生に利用して頂いております。"
+                            data-en="Currently introduced at the Tobata Campus of Kyushu Institute of Technology. By scanning a 2D code and entering the name of a facility or lecture room, directions to that location are displayed with images.">
+                        </p>
+                        <div class="project-links">
+                            <a href="http://fk-exp.com/kyutech-navi/guide" target="_blank" rel="noopener"
+                                class="pill-link">
+                                <i class="fa-solid fa-external-link-alt"></i> アプリを見る
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card glass animated-item" data-animation="fade-in-up" data-delay="0.3s">
+                    <div class="project-card__content">
+                        <h2 class="project-title" data-ja="【事例２】駅SNSアプリ" data-en="[Case 2] Station SNS App"></h2>
+                        <p class="project-subtitle">〜 Stacio Connect Stations 〜</p>
+                        <div class="project-tags">
+                            <span class="tag">WEB</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">iOS (準備中)</span>
+                            <span class="tag">中規模アプリ</span>
+                        </div>
+                        <p class="project-desc" data-ja="このアプリは「駅」をテーマとした総合アプリです。主に以下の３つの機能があります。
+【駅チェックイン機能】スマートフォンの位置情報を用いて、近くの駅にチェックインすることができます。
+【駅コレクション機能】自分がチェックインした駅を一覧で確認することができます。全国全ての鉄道会社に対応しています。
+【駅投稿機能】駅について投稿することができます。DM機能を使って他ユーザーと交流も可能です。"
+                            data-en="A comprehensive app themed around 'Stations'. Key features include Station Check-in using location, Station Collection of all train companies nationwide, and a Station Posting feature.">
+                        </p>
+                        <div class="project-links">
+                            <a href="https://stacio.jp/home" target="_blank" rel="noopener" class="pill-link"><i
+                                    class="fa-solid fa-globe"></i> WEB版</a>
+                            <a href="https://play.google.com/store/apps/details?id=jp.stacio.twa" target="_blank"
+                                rel="noopener" class="pill-link"><i class="fa-brands fa-google-play"></i> Google
+                                Play</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card glass animated-item" data-animation="fade-in-up" data-delay="0.4s">
+                    <div class="project-card__content">
+                        <h2 class="project-title" data-ja="【事例３】得点集計ツール" data-en="[Case 3] Score Calculator"></h2>
+                        <p class="project-subtitle">〜 WRO Calculator 〜</p>
+                        <div class="project-tags">
+                            <span class="tag">WEB</span>
+                            <span class="tag">中規模アプリ</span>
+                        </div>
+                        <p class="project-desc"
+                            data-ja="WRO (World Robot Olympiad) の一部の地方予選会及び日本決勝大会にて、得点集計アプリを導入しました。これにより、例年得点集計・順位決定にかかっていた時間を短縮することに成功しました。また、観客の方々に対してロボット競技の結果をリアルタイムにお届けすることができるようになったため、より見応えのある大会にすることができました。"
+                            data-en="Introduced at WRO regional qualifiers and Japan finals. Successfully reduced time for score calculation and provided real-time results to audiences.">
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Links ----------------------------------------------->
+    <section id="links" class="section section--links">
+        <div class="container">
+            <h2 class="section__title" data-ja="リンク" data-en="Links">リンク</h2>
+
+            <p data-ja="SNSフォローお待ちしています！" data-en="Please follow me !!"></p>
+            <ul class="links">
+                <li>
+                    <a class="chip link sns-instagram" href="https://www.instagram.com/kazuma_f3k" target="_blank"
+                        rel="noopener">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a class="chip link sns-facebook" href="https://www.facebook.com/profile.php?id=61580060428258"
+                        target="_blank" rel="noopener">
+                        <i class="fa-brands fa-facebook"></i> Facebook
+                    </a>
+                </li>
+                <!-- <li>
+            <a class="chip link sns-x" href="https://x.com/yourname" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter"></i> X (Twitter)
+            </a>
+            </li> -->
+                <li>
+                    <a class="chip link sns-github" href="https://github.com/f3k-dev" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- footer ----------------------------------------------->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025-<span id="year"></span> <span data-ja="Kazuma Futami" data-en="Kazuma Futami"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
