@@ -16,7 +16,7 @@
       if (typeof el.placeholder === 'string') {
         el.placeholder = text;
       } else {
-        el.textContent = text;
+        el.innerHTML = text;
       }
     });
 

@@ -23,21 +23,22 @@
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 16px;
+    gap: 12px;
 }
 
 .pub {
     display: flex;
-    gap: 16px;
-    padding: 20px;
+    gap: 12px;
+    padding: 15px 20px;
     border-radius: var(--radius);
 }
 
 .pub__number {
-    font-size: 1.15rem;
+    font-size: 18px;
     font-weight: 700;
     color: var(--primary);
     min-width: 32px;
+    margin-top: -3px;
 }
 
 .pub__content {
@@ -49,7 +50,7 @@
 
 .pub__text {
     margin: 0;
-    font-size: 1.05rem;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--text);
 }
