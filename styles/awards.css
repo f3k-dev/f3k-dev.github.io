@@ -1,1 +1,46 @@
+/* Awards Section Styles */
 
+.section--awards .card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* リンクがある場合のスタイル */
+.section--awards .card.card--link {
+    padding-right: 24px; /* 右側のパディングは元に戻す */
+    padding-bottom: 24px; /* アイコン用に下部のスペースを確保 */
+}
+
+.section--awards .card.card--link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(44, 61, 88, 0.2);
+}
+
+/* カード全体を覆う透明なリンク */
+.section--awards .card__link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: var(--radius);
+}
+
+/* 右下・右側に表示するアイコン */
+.section--awards .card__icon {
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+    font-size: 1.2rem;
+    color: var(--primary);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.section--awards .card.card--link:hover .card__icon {
+    opacity: 1;
+    /* color: var(--iris); */
+    transform: translateX(3px) translateY(-3px);
+}
