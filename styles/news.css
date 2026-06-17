@@ -1,0 +1,59 @@
+/* News Bar (トップバー直下) */
+/* 既定は非表示。内容があれば scripts.js が表示する */
+.news-bar {
+    display: none;
+    width: 100%;
+    padding: 9px 0;
+    text-decoration: none;
+    color: #4a3a00;
+    background: linear-gradient(90deg, #ffe27a, #ffc83d);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: background 0.25s ease;
+}
+
+.news-bar:hover {
+    background: linear-gradient(90deg, #ffd84d, #ffbe1a);
+}
+
+.news-bar .container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.news-bar__label {
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border-radius: 99px;
+    background: #4a3a00;
+    color: #ffe27a;
+}
+
+.news-bar__text {
+    flex: 1;
+    min-width: 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-bar__arrow {
+    flex-shrink: 0;
+    opacity: 0.75;
+    transition: transform 0.25s ease;
+}
+
+.news-bar:hover .news-bar__arrow {
+    transform: translateX(4px);
+}
+
+@media (max-width: 520px) {
+    .news-bar__text {
+        font-size: 0.88rem;
+    }
+}

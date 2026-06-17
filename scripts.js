@@ -33,6 +33,15 @@
   setLang(initialLang);
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // --- News bar: 内容(data-ja / data-en)があれば表示、両方空なら非表示 ---
+  const newsBar = document.getElementById('news-bar');
+  if (newsBar) {
+    const textEl = newsBar.querySelector('.news-bar__text');
+    const ja = (textEl?.getAttribute('data-ja') || '').trim();
+    const en = (textEl?.getAttribute('data-en') || '').trim();
+    newsBar.style.display = (ja || en) ? 'block' : 'none';
+  }
 })();
 
 
