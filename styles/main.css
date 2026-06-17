@@ -1,25 +1,34 @@
 :root{
-  --bg: #f6f7fb;
-  --text: #1c2230;
-  --muted: #5e6b85;
+  --bg: #f2f7fd;           /* 青みのある白 */
+  --text: #182c4e;         /* 濃紺（heroの名前と統一） */
+  --muted: #5a6b88;        /* ブルーグレー */
 
-  --primary: #86b3f4;      /* 淡い青 */
-  --accent: #f7a6c2;       /* 淡いピンク */
-  --mint: #a8e6cf;         /* ミント */
-  --sun: #ffd3b6;          /* サンセット */
-  --iris: #bdb2ff;         /* ラベンダー */
+  /* === Blue system（heroの青を基調） === */
+  --navy: #244e88;         /* hero deep blue（アンカー） */
+  --primary: #4a87e0;      /* メインの青 */
+  --primary-light: #86b3f4;/* 淡い青 */
+  --sky: #cfe3ff;          /* hero light blue */
+
+  /* === Accents（青に馴染む同系アクセント・控えめに使用） === */
+  --accent: #7c9cff;       /* ペリウィンクル */
+  --iris: #9db4ff;         /* 青みのラベンダー */
+  --cyan: #6fd0e6;         /* やわらかいティール */
+
+  /* legacy aliases（青へ寄せて再定義） */
+  --mint: var(--cyan);
+  --sun: var(--sky);
 
   --grad-1: linear-gradient(135deg, var(--primary), var(--iris));
-  --grad-2: linear-gradient(135deg, #f2fffa, var(--sun));
+  --grad-2: linear-gradient(135deg, #eaf3ff, var(--sky));
 
-  --grad-3: linear-gradient(180deg, #244e88, #cfe3ff);
-  --grad-4: linear-gradient(180deg, #cfe3ff, #cfebff);
+  --grad-3: linear-gradient(180deg, var(--navy), var(--sky));
+  --grad-4: linear-gradient(180deg, var(--sky), #eaf4ff);
   --glass-bg: rgba(255, 255, 255, 0.68);
   --glass-border: rgba(255,255,255,0.6);
 
   --container: 1100px;
   --radius: 18px;
-  --shadow: 0 10px 30px rgba(44,61,88,.15);
+  --shadow: 0 10px 30px rgba(36,78,136,.15);
 }
 
 *{box-sizing: border-box}
@@ -29,8 +38,8 @@ body{
   color: var(--text);
   /* background:
     radial-gradient(60% 40% at 10% 10%, rgba(134,179,244,.25), transparent 60%),
-    radial-gradient(50% 40% at 90% 20%, rgba(183, 148, 244, .22), transparent 60%),
-    radial-gradient(30% 30% at 50% 100%, rgba(168, 230, 207, .20), transparent 60%),
+    radial-gradient(50% 40% at 90% 20%, rgba(157, 180, 255, .22), transparent 60%),
+    radial-gradient(30% 30% at 50% 100%, rgba(111, 208, 230, .20), transparent 60%),
     var(--bg); */
   line-height: 1.65;
 }
@@ -41,11 +50,10 @@ body{
 .container{width:min(100% - 2rem, var(--container)); margin-inline:auto}
 .section{padding: 20px 0}
 .section--hero{padding-top: 40px; padding-bottom: 40px; background: var(--grad-3)}
-.section--about{padding-top: 40px; padding-bottom: 40px; background: linear-gradient(90deg, rgba(228, 236, 236, 0.268), rgba(179, 153, 200, 0.146))}
-.section--awards{background: linear-gradient(175deg, #f6fff8, #fff2cd)}
-.section--links{background: #dbe3e9;}
-/* .section--yellow{background: linear-gradient(135deg, rgba(197, 237, 158, 0.527), rgba(255, 199, 142, 0.406))} */
-.section--experience{background: linear-gradient(180deg, rgba(202, 244, 255, 0.762), rgba(72, 84, 255, 0.406))}
+.section--about{padding-top: 40px; padding-bottom: 40px; background: linear-gradient(160deg, rgba(207, 227, 255, 0.45), rgba(242, 247, 253, 0.6))}
+.section--awards{background: linear-gradient(160deg, #f4f8ff 0%, #faf6ee 100%)}
+.section--links{background: #dde7f4;}
+.section--experience{background: linear-gradient(180deg, rgba(207, 227, 255, 0.7), rgba(74, 135, 224, 0.35))}
 
 .section__title{
   font-size: clamp(26px, 3.2vw, 34px);
@@ -91,7 +99,7 @@ body{
 
 
 /* Footer */
-.footer{padding: 10px 0; text-align:center; color: var(--muted); background: #dbe3e9;}
+.footer{padding: 10px 0; text-align:center; color: var(--muted); background: #dde7f4;}
 .footer p{margin-top: 0;}
 
 /* Responsive */

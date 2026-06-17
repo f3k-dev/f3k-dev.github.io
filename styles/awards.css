@@ -1,8 +1,36 @@
 /* Awards Section Styles */
 
+/* 受賞らしいシャンパンゴールドのアクセント（彩度を落とした上品トーン） */
+:root{
+    --gold: #b8954a;
+    --gold-soft: #e8d9b0;
+    --gold-grad: linear-gradient(135deg, #e8d9b0, #c9a85f);
+}
+
 .section--awards .card {
     position: relative;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* カード上部のゴールドライン */
+/* .section--awards .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+    z-index: 2;
+    pointer-events: none;
+} */
+
+/* 年バッジをゴールドに */
+.section--awards .tag {
+    background: linear-gradient(135deg, #f2e9d2, #ddc488);
+    color: #5c4a1e;
+    font-weight: 700;
 }
 
 /* リンクがある場合のスタイル */
@@ -33,8 +61,8 @@
     right: 20px;
     bottom: 12px;
     font-size: 1.2rem;
-    color: var(--primary);
-    opacity: 0.6;
+    color: var(--gold);
+    opacity: 0.7;
     transition: all 0.3s ease;
     z-index: 0;
 }

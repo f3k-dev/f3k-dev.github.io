@@ -1,6 +1,14 @@
+.section--portfolio,
+.section--portfolio-page {
+    --primary: #4a87e0;   /* メインブルー */
+    --accent: #7c9cff;    /* ペリウィンクル */
+    --iris: #9db4ff;      /* 青みラベンダー */
+    --grad-1: linear-gradient(135deg, var(--primary), var(--iris));
+}
+
 /* Portfolio Section (Main Page Cover) */
 .section--portfolio {
-    background: linear-gradient(135deg, rgba(168, 230, 207, 0.4), rgba(183, 148, 244, 0.3));
+    background: linear-gradient(135deg, rgba(207, 227, 255, 0.5), rgba(157, 180, 255, 0.25));
 }
 
 .portfolio-cover {
@@ -52,7 +60,7 @@
 
 .portfolio-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(183, 148, 244, 0.3);
+    box-shadow: 0 10px 25px rgba(74, 135, 224, 0.3);
     background: #fff;
 }
 
