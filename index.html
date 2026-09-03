@@ -123,7 +123,7 @@
         <article class="card glass">
           <h3 data-ja="基本情報" data-en="Basic Information"></h3>
           <ul class="about__meta">
-            <li><span class="k" data-ja="年齢" data-en="Age"></span><span class="v" data-ja="22" data-en="22"></span></li>
+            <li><span class="k" data-ja="年齢" data-en="Age"></span><span class="v" data-ja="23"></span></li>
             <li><span class="k" data-ja="居住地" data-en="Location"></span><span class="v" data-ja="福岡県 / 北九州市"
                 data-en="Kitakyushu City, Fukuoka, Japan"></span></li>
             <li><span class="k" data-ja="出身地" data-en="Hometown"></span><span class="v" data-ja="京都府 / 大山崎町"
@@ -332,14 +332,24 @@
   <!-- Publications ----------------------------------------------->
   <section id="publications" class="section section--publications">
     <div class="container">
-      <h2 class="section__title" data-ja="外部発表" data-en="Publications"></h2>
+      <div class="pub-head">
+        <h2 class="section__title" data-ja="外部発表" data-en="Publications"></h2>
+
+        <!-- 表示切り替え（すべて / 主著のみ） -->
+        <div class="pub-filter" role="group" aria-label="Publications filter">
+          <button type="button" class="pub-filter__btn" data-pub-filter="all" aria-pressed="false"
+            data-ja="すべて" data-en="All"></button>
+          <button type="button" class="pub-filter__btn" data-pub-filter="first" aria-pressed="true"
+            data-ja="主著のみ" data-en="First-author"></button>
+        </div>
+      </div>
 
       <div class="pub-group">
         <h3 class="pub__year-heading">FY 2026</h3>
         <ul class="pubs">
           <!----------------------------------------------->
-          <li class="pub glass">
-            <div class="pub__number">[6]</div>
+          <li class="pub glass" data-authorship="first">
+            <div class="pub__number">[9]</div>
             <div class="pub__content">
               <p class="pub__text">
                 <span data-en="<b>Kazuma Futami</b>, Yuga Yano, Hakaru Tamukoh"></span>,
@@ -351,13 +361,39 @@
             </div>
           </li>
           <!----------------------------------------------->
-          <li class="pub glass">
-            <div class="pub__number">[5]</div>
+          <li class="pub glass" data-authorship="co">
+            <div class="pub__number">[8]</div>
+            <div class="pub__content">
+              <p class="pub__text">
+                <span data-ja="⼩林 遼平, <b>⼆⾒ 和磨</b>, ⼩林 凌空, 榊原 琉世, 渡辺 太貴, ムン チャンホ, 鈴⽊ 琉⾺, 渡辺 魁⼈, 有村 幸峻, 下村 晃⽣, 麓 宗⾺, 明石 凜太郎, 福⽥ 拓真, 渡邉 治彦, 井上 直翔, ⼤橋 遼⼠, ⽥中 将栄, ⼭⼝ 旦, セーニ ロハン, 磯本 航世, ⼭⼝ 直紀, ⽮野 優雅, 平八重 壮史, 島⽥ 蒼仁郎, 吉岡 莞汰, ⽔⾕ 彰伸, ⽥中 悠⼀朗, ⽥向 権"></span>,
+                "<span data-ja="RoboCup@Home OPLにおける General Purpose Service Robot 実現への取り組み"></span>,"
+                <i data-ja="第44回 日本ロボット学会学術講演会（RSJ）オープンフォーラム"></i>,
+                <span data-ja="金沢, 2026"></span>.
+                <a class="link" href="https://ac.rsj-web.org/2026/" data-ja="[Link]" data-en="[Link]"></a>
+              </p>
+            </div>
+          </li>
+          <!----------------------------------------------->
+          <li class="pub glass" data-authorship="first">
+            <div class="pub__number">[7]</div>
+            <div class="pub__content">
+              <p class="pub__text">
+                <span data-ja="<b>二見 和磨</b>, 下村 晃生, 矢野 優雅, 田向 権"></span>,
+                "<span data-ja="単腕ロボットの衣服折り畳みタスクにおけるセグメンテーションとVLMを統合した把持点推定"></span>,"
+                <i data-ja="第44回 日本ロボット学会学術講演会（RSJ）"></i>,
+                <span data-ja="金沢, 2026"></span>.
+                <a class="link" href="https://ac.rsj-web.org/2026/" data-ja="[Link]" data-en="[Link]"></a>
+              </p>
+            </div>
+          </li>
+          <!----------------------------------------------->
+          <li class="pub glass" data-authorship="first">
+            <div class="pub__number">[6]</div>
             <div class="pub__content">
               <p class="pub__text">
                 <span data-ja="<b>二見 和磨</b>, 矢野 優雅, 田向 権"></span>, 
                 "<span data-ja="FALCoN: 視覚ナビゲーションにおける失敗予兆検知に基づく学習型回復行動生成"></span>,"
-                <i data-ja="第29回 画像の認識・理解シンポジウム (MIRU2026)"></i>, 
+                <i data-ja="第29回 画像の認識・理解シンポジウム (MIRU)"></i>, 
                 <span data-ja="長崎, 2026"></span>. 
                 <a class="link" href="https://miru-committee.github.io/miru2026/" data-ja="[リンク]"></a>
               </p>
@@ -368,8 +404,8 @@
          <h3 class="pub__year-heading">FY 2025</h3>
         <ul class="pubs">
           <!----------------------------------------------->
-          <li class="pub glass">
-            <div class="pub__number">[4]</div>
+          <li class="pub glass" data-authorship="first">
+            <div class="pub__number">[5]</div>
             <div class="pub__content">
               <p class="pub__text">
                 <span data-en="<b>Kazuma Futami</b>, Yuga Yano, Hakaru Tamukoh"></span>, 
@@ -381,21 +417,21 @@
             </div>
           </li>
            <!----------------------------------------------->
-          <li class="pub glass">
-            <div class="pub__number">[3]</div>
+          <li class="pub glass" data-authorship="first">
+            <div class="pub__number">[4]</div>
             <div class="pub__content">
               <p class="pub__text">
                 <span data-ja="<b>二見 和磨</b>, 矢野 優雅, 田向 権"></span>, 
                 <!-- <span data-ja=", "></span> -->
-                <i data-ja="栢森情報科学振興財団 30周年記念 ロボカップワークショップ"></i>, 
+                <i data-ja="第14回インテリジェントホームロボティクス研究会"></i>, 
                 <span data-ja="名古屋, 2026"></span>. 
                 <a class="link" href="https://www.kayamorif.or.jp/30th/" data-ja="[リンク]"></a>
               </p>
             </div>
           </li>
            <!----------------------------------------------->
-          <li class="pub glass">
-            <div class="pub__number">[2]</div>
+          <li class="pub glass" data-authorship="first">
+            <div class="pub__number">[3]</div>
             <div class="pub__content">
               <p class="pub__text">
                 <span data-ja="<b>二見 和磨</b>"></span>, 
@@ -407,7 +443,20 @@
             </div>
           </li>
           <!----------------------------------------------->
-          <li class="pub glass">
+          <li class="pub glass" data-authorship="co">
+            <div class="pub__number">[2]</div>
+            <div class="pub__content">
+              <p class="pub__text">
+                <span data-en="Soma Fumoto, Ryohei Kobayashi, Taiki Watanabe, Yuga Yano, Akinobu Mizutani, Naoki Yamaguchi, Ryo Terashima, Ryusei Sakakibara, <b>Kazuma Futami</b>, Keita Okumura, Kosei Isomoto, Koshun Arimura, Yuta Ohno, Tomoaki Fujino, Sojiro Shimada, Yuichiro Tanaka, Takeshi Nishida, Hakaru Tamukoh"></span>, 
+                "<span data-en="Hibikino-Musashi@Home 2026 Team Description Paper"></span>,"
+                <!-- <span data-en=", "></span> -->
+                <span data-en="2025"></span>. 
+                <a class="link" href="" data-ja="[Link]"></a>
+              </p>
+            </div>
+          </li>
+           <!----------------------------------------------->
+          <li class="pub glass" data-authorship="co">
             <div class="pub__number">[1]</div>
             <div class="pub__content">
               <p class="pub__text">

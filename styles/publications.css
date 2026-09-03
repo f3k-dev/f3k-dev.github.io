@@ -3,8 +3,58 @@
     background: linear-gradient(135deg, rgba(235, 245, 255, 0.4), rgba(225, 235, 245, 0.5));
 }
 
+/* 見出し + 表示切り替え */
+.pub-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-bottom: 10px;
+}
+
+.pub-head .section__title {
+    margin-bottom: 0;
+}
+
+/* 表示切り替え（すべて / 主著のみ） */
+.pub-filter {
+    display: flex;
+    gap: 6px;
+}
+
+.pub-filter__btn {
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+    padding: 8px 20px;
+    border: none;
+    background: none;
+    border-radius: 999px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color .2s ease, background .2s ease;
+}
+
+.pub-filter__btn:hover {
+    color: var(--primary);
+    background: rgba(74, 135, 224, 0.10);
+}
+
+.pub-filter__btn[aria-pressed="true"] {
+    background: var(--primary);
+    color: #fff;
+}
+
 .pub-group {
     margin-bottom: 32px;
+}
+
+/* フィルタで非表示になった要素 */
+.pub[hidden],
+.pub__year-heading[hidden],
+.pubs[hidden] {
+    display: none;
 }
 
 .pub__year-heading {

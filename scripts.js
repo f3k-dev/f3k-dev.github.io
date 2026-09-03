@@ -34,6 +34,34 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // --- Publications: すべて / 主著のみ の切り替え ---
+  const pubFilterBtns = $('.pub-filter__btn');
+  if (pubFilterBtns.length) {
+    const applyPubFilter = (mode) => {
+      pubFilterBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.pubFilter === mode));
+
+      $('.pubs').forEach(list => {
+        let shown = 0;
+        $('.pub', list).forEach(pub => {
+          const visible = (mode === 'all') || (pub.dataset.authorship === 'first');
+          pub.hidden = !visible;
+          if (visible) shown++;
+        });
+        // 該当が無い年は見出しごと隠す
+        list.hidden = shown === 0;
+        const heading = list.previousElementSibling;
+        if (heading && heading.classList.contains('pub__year-heading')) {
+          heading.hidden = shown === 0;
+        }
+      });
+    };
+
+    pubFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyPubFilter(btn.dataset.pubFilter));
+    });
+    applyPubFilter('first');
+  }
+
   // --- News bar: 内容(data-ja / data-en)があれば表示、両方空なら非表示 ---
   const newsBar = document.getElementById('news-bar');
   if (newsBar) {
