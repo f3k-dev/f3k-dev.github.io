@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-ja="Travel - Kazuma Futami" data-en="Travel - Kazuma Futami">Travel - Kazuma Futami</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/portfolio.css" />
+    <link rel="stylesheet" href="./styles/links.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    <!-- 外部ライブラリ（flag-icons / Leaflet）の後に読み込んで上書きする -->
+    <link rel="stylesheet" href="./styles/travel.css" />
+</head>
+
+<body>
+    <header class="topbar glass">
+        <div class="container topbar__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__logo"></span>
+                <span class="brand__name" data-en="Kazuma Futami"></span>
+            </a>
+            <nav class="nav">
+                <a href="index.html#experience" data-ja="経歴" data-en="Experience">経歴</a>
+                <a href="index.html#awards" data-ja="受賞" data-en="Awards">受賞</a>
+                <a href="index.html#portfolio" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</a>
+                <a href="index.html#publications" data-ja="外部発表" data-en="Publications">外部発表</a>
+                <a href="index.html#links" data-ja="リンク" data-en="Links">リンク</a>
+            </nav>
+            <div class="lang-switch">
+                <button id="btn-ja" class="chip" aria-pressed="true">JA</button>
+                <button id="btn-en" class="chip" aria-pressed="false">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="section section--portfolio-page section--travel">
+        <div class="container">
+            <div class="back-home animated-item" data-animation="fade-in-up" data-delay="0.05s" style="margin-bottom: 2rem;">
+                <a href="index.html" class="pill-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span data-ja="ホームに戻る" data-en="Back to Home"></span>
+                </a>
+            </div>
+            <div class="portfolio-header animated-item" data-animation="fade-in-up" data-delay="0.1s">
+                <h1 class="section__title" data-ja="Travel" data-en="Travel"></h1>
+                <p class="lead" data-ja="全ての国に行ってみたい"
+                    data-en="I want to visit all countries"></p>
+            </div>
+
+            <!-- 統計（数値は travel.js が TRIPS から自動計算） -->
+            <div class="travel-stats animated-item" data-animation="fade-in-up" data-delay="0.15s">
+                <div class="stat glass">
+                    <i class="fa-solid fa-flag stat__icon"></i>
+                    <span class="stat__num" data-stat="countries">0</span>
+                    <span class="stat__label" data-ja="訪れた国・地域" data-en="Countries & regions"></span>
+                </div>
+                <div class="stat glass">
+                    <i class="fa-solid fa-city stat__icon"></i>
+                    <span class="stat__num" data-stat="cities">0</span>
+                    <span class="stat__label" data-ja="訪れた都市" data-en="Cities"></span>
+                </div>
+                <div class="stat glass">
+                    <i class="fa-solid fa-suitcase-rolling stat__icon"></i>
+                    <span class="stat__num" data-stat="trips">0</span>
+                    <span class="stat__label" data-ja="渡航回数" data-en="Trips"></span>
+                </div>
+            </div>
+
+            <!-- 絞り込み -->
+            <div class="travel-filter glass animated-item" data-animation="fade-in-up" data-delay="0.2s">
+                <div class="travel-filter__row">
+                    <span class="travel-filter__label"><i class="fa-solid fa-flag"></i><span data-ja="国・地域" data-en="Country"></span></span>
+                    <div id="country-chips" class="country-chips"></div>
+                </div>
+                <div class="travel-filter__row">
+                    <span class="travel-filter__label"><i class="fa-solid fa-tag"></i><span data-ja="用事" data-en="Purpose"></span></span>
+                    <div id="purpose-filter" class="pub-filter" role="group" aria-label="Purpose filter"></div>
+                </div>
+            </div>
+
+            <div class="travel-layout">
+                <!-- 旅程一覧（travel.js が生成） -->
+                <div id="trip-list" class="travel-list"></div>
+
+                <!-- 地図 -->
+                <aside class="travel-map glass">
+                    <div class="travel-map__head">
+                        <h2 class="travel-map__title"><i class="fa-solid fa-map-location-dot"></i><span data-ja="旅の地図" data-en="Travel Map"></span></h2>
+                        <button type="button" id="map-reset" class="map-reset">
+                            <i class="fa-solid fa-earth-asia"></i><span data-ja="全体を表示" data-en="Show all"></span>
+                        </button>
+                    </div>
+                    <div id="travel-map" class="travel-map__canvas"></div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Links ----------------------------------------------->
+    <section id="links" class="section section--links">
+        <div class="container">
+        <h2 class="section__title" data-ja="リンク" data-en="Links">リンク</h2>
+
+        <p data-ja="SNSフォローお待ちしています！" data-en="Please follow me !!"></p>
+        <ul class="links">
+            <li>
+            <a class="chip link sns-linkedin" href="https://www.linkedin.com/in/f3k/" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            </li>
+
+            <li>
+            <a class="chip link sns-facebook" href="https://www.facebook.com/profile.php?id=61580060428258"
+                target="_blank" rel="noopener">
+                <i class="fa-brands fa-facebook"></i> Facebook
+            </a>
+            </li>
+            <li>
+            <a class="chip link sns-instagram" href="https://www.instagram.com/kazuma_f3k" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            </li>
+            <li>
+            <a class="chip link sns-github" href="https://github.com/f3k-dev" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            </li>
+        </ul>
+        </div>
+    </section>
+
+    <!-- footer ----------------------------------------------->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025-<span id="year"></span> <span data-ja="Kazuma Futami" data-en="Kazuma Futami"></span></p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <!-- travel-data.js（データ）→ travel.js（描画）→ scripts.js（言語切り替え）の順に読み込む -->
+    <script src="travel-data.js"></script>
+    <script src="travel.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

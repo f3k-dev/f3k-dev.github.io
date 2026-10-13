@@ -4,6 +4,15 @@
   const btnEN = document.getElementById('btn-en');
   const LS_KEY = 'pref-lang';
 
+  // --- 年齢: data-birthdate (YYYY-MM-DD) から現在の年齢を計算 ---
+  $('[data-birthdate]').forEach(el => {
+    const [y, m, d] = el.getAttribute('data-birthdate').split('-').map(Number);
+    const now = new Date();
+    const hadBirthday = (now.getMonth() + 1 > m) || (now.getMonth() + 1 === m && now.getDate() >= d);
+    const age = now.getFullYear() - y - (hadBirthday ? 0 : 1);
+    el.setAttribute('data-ja', String(age));
+  });
+
   const setLang = (lang) => {
     const other = lang === 'ja' ? 'en' : 'ja';
     btnJA.setAttribute('aria-pressed', lang === 'ja');
@@ -35,7 +44,7 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // --- Publications: すべて / 主著のみ の切り替え ---
-  const pubFilterBtns = $('.pub-filter__btn');
+  const pubFilterBtns = $('[data-pub-filter]');
   if (pubFilterBtns.length) {
     const applyPubFilter = (mode) => {
       pubFilterBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.pubFilter === mode));

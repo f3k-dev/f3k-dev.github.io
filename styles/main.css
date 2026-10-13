@@ -98,6 +98,57 @@ body{
 
 
 
+/* 表示切り替えボタン（共通: Publications / Travel） */
+.pub-filter {
+    display: flex;
+    gap: 6px;
+}
+
+.pub-filter__btn {
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+    padding: 8px 20px;
+    border: none;
+    background: none;
+    border-radius: 999px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color .2s ease, background .2s ease;
+}
+
+.pub-filter__btn:hover {
+    color: var(--primary);
+    background: rgba(74, 135, 224, 0.10);
+}
+
+.pub-filter__btn[aria-pressed="true"] {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* フェードインアニメーション（共通: .animated-item は scripts.js が発火） */
+.animated-item {
+  opacity: 0; /* JSでアニメーションが適用されるまで非表示 */
+  animation-fill-mode: forwards; /* アニメーション終了時の状態を維持 */
+}
+
+/* --- アニメーション定義 (Keyframes) --- */
+
+/* 下からフェードイン */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* Footer */
 .footer{padding: 10px 0; text-align:center; color: var(--muted); background: #dde7f4;}
 .footer p{margin-top: 0;}

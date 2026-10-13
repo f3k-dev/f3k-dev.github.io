@@ -16,35 +16,7 @@
     margin-bottom: 0;
 }
 
-/* 表示切り替え（すべて / 主著のみ） */
-.pub-filter {
-    display: flex;
-    gap: 6px;
-}
-
-.pub-filter__btn {
-    font: inherit;
-    font-size: 1.05rem;
-    font-weight: 600;
-    line-height: 1.4;
-    padding: 8px 20px;
-    border: none;
-    background: none;
-    border-radius: 999px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: color .2s ease, background .2s ease;
-}
-
-.pub-filter__btn:hover {
-    color: var(--primary);
-    background: rgba(74, 135, 224, 0.10);
-}
-
-.pub-filter__btn[aria-pressed="true"] {
-    background: var(--primary);
-    color: #fff;
-}
+/* 表示切り替えボタン（.pub-filter）は main.css（共通）に定義 */
 
 .pub-group {
     margin-bottom: 32px;

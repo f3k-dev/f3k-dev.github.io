@@ -85,25 +85,7 @@
   line-height: 1.6;
 }
 
-/* --- アニメーションの基本設定 --- */
-.animated-item {
-  opacity: 0; /* JSでアニメーションが適用されるまで非表示 */
-  animation-fill-mode: forwards; /* アニメーション終了時の状態を維持 */
-}
-
-/* --- アニメーション定義 (Keyframes) --- */
-
-/* 下からフェードイン */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* .animated-item / fadeInUp は main.css（共通）に定義 */
 
 /* スクロールダウン矢印のバウンス */
 @keyframes bounce {

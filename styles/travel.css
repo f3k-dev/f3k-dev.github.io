@@ -1,0 +1,716 @@
+/* =========================================================
+ * Travel page
+ * topbar / portfolio-header / pill-link / project-images / pub-filter などの
+ * 共通部品は main.css・portfolio.css のものを使い、ここではページ固有の部分のみ定義
+ * ========================================================= */
+
+.section--travel {
+    --travel-bg: #f3f7fc;
+    background:
+        radial-gradient(60% 320px at 15% 0%, rgba(134, 179, 244, .22), transparent 70%),
+        radial-gradient(50% 280px at 90% 0%, rgba(111, 208, 230, .18), transparent 70%),
+        var(--travel-bg);
+}
+
+.section--travel .portfolio-header {
+    margin-bottom: 2.5rem;
+}
+
+
+/* ---------- Stats ---------- */
+.travel-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 1.2rem 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.stat__icon {
+    color: var(--primary);
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.stat__num {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    background: var(--grad-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat__label {
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+
+
+/* ---------- Filter ---------- */
+.travel-filter {
+    display: grid;
+    gap: .75rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius);
+}
+
+.travel-filter__row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+}
+
+.travel-filter__label {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    min-width: 6.5em;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--muted);
+}
+
+.country-chips {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.country-chip {
+    font: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px 4px 4px;
+    border-radius: 999px;
+    border: 1px solid rgba(36, 78, 136, .12);
+    background: rgba(255, 255, 255, .75);
+    color: var(--text);
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.country-chip .fi {
+    font-size: 1.6rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .08);
+}
+
+.country-chip__count {
+    min-width: 1.6em;
+    padding: 0 .45em;
+    border-radius: 999px;
+    background: rgba(74, 135, 224, .12);
+    color: var(--navy);
+    font-size: .75rem;
+    text-align: center;
+}
+
+.country-chip:hover {
+    transform: translateY(-1px);
+    background: #fff;
+    border-color: var(--primary-light);
+}
+
+.country-chip[aria-pressed="true"] {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+}
+
+.country-chip[aria-pressed="true"] .country-chip__count {
+    background: rgba(255, 255, 255, .2);
+    color: #fff;
+}
+
+.travel-filter .pub-filter {
+    flex-wrap: wrap;
+}
+
+.travel-filter .pub-filter__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: .92rem;
+}
+
+
+/* ---------- Layout ---------- */
+.travel-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+
+/* ---------- Year group ---------- */
+.trip-year + .trip-year {
+    margin-top: 2.5rem;
+}
+
+.trip-year__heading {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 0 1rem 10px;
+    padding-bottom: 4px;
+    font-size: 1.5rem;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.trip-year__heading i {
+    font-size: 1.1rem;
+}
+
+.trip-year__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.trip-year[hidden],
+.trip-wrap[hidden],
+.trip-empty[hidden] {
+    display: none;
+}
+
+.trip-wrap {
+    scroll-margin-top: 90px;
+}
+
+.trip-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+
+/* ---------- Trip card (boarding pass) ---------- */
+.trip {
+    --trip-color: var(--primary);
+    position: relative;
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .8);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    transition: transform .3s cubic-bezier(.25, .8, .25, 1), box-shadow .3s ease;
+}
+
+.trip:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 38px rgba(36, 78, 136, .18);
+}
+
+.trip.is-active {
+    box-shadow: 0 0 0 2px var(--trip-color), 0 18px 38px rgba(36, 78, 136, .18);
+}
+
+/* 半券部分 */
+.trip__stub {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 1.5rem .75rem;
+    text-align: center;
+    border-radius: 22px 0 0 22px;
+    background: #f6f8fb;
+    border-right: 2px dashed rgba(36, 78, 136, .16);
+}
+
+.trip__stub-icon {
+    color: var(--trip-color);
+    font-size: .95rem;
+    margin-bottom: 2px;
+}
+
+.trip__year {
+    color: color-mix(in srgb, var(--trip-color) 55%, #182c4e);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .02em;
+    font-variant-numeric: tabular-nums;
+}
+
+.trip__dates {
+    font-size: .88rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.trip__days {
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.trip-badge {
+    margin-top: 4px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.trip-badge--upcoming {
+    background: var(--navy);
+    color: #fff;
+}
+
+.trip-badge--tbd {
+    background: #fff6dc;
+    color: #8a5a00;
+    border: 1px dashed #e0a03a;
+}
+
+/* 本券部分 */
+.trip__main {
+    min-width: 0;
+    padding: 1.5rem 1.75rem;
+}
+
+.trip__head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: .75rem;
+}
+
+.trip__flags {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.trip__flags .fi {
+    font-size: 34px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(24, 44, 78, .18);
+}
+
+.trip__flags .fi + .fi {
+    margin-left: -12px;
+}
+
+.trip__title {
+    margin: 0;
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    line-height: 1.35;
+}
+
+.trip__purposes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: .9rem;
+}
+
+.purpose-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 11px;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: rgba(36, 78, 136, .06);
+    border: 1px solid rgba(36, 78, 136, .12);
+}
+
+/* ルート（都市チップ） */
+.route {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.route__stop {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 12px 4px 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .9);
+    border: 1px solid rgba(36, 78, 136, .1);
+    font-size: .92rem;
+    font-weight: 600;
+}
+
+.route__stop .fi {
+    font-size: 1rem;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .18);
+}
+
+/* 経由地（展開部分）：通過地点は控えめ、訪れた都市は強調 */
+.route--stops {
+    gap: 6px 4px;
+    margin: .8rem 0 .3rem;
+}
+
+/* 矢印と次の地点を一体にして、改行で矢印だけ取り残されないようにする */
+.route__leg {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.route--stops .route__stop {
+    padding: 3px 10px 3px 6px;
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--muted);
+    background: rgba(255, 255, 255, .7);
+}
+
+.route--stops .route__stop .fi {
+    font-size: .85rem;
+}
+
+.route__hop {
+    color: var(--trip-color);
+    font-size: .75rem;
+}
+
+.trip__note {
+    margin: 0 0 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+/* 旅程の詳細（折りたたみ） */
+.trip__details {
+    margin-bottom: 1rem;
+    padding: .55rem .9rem;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--trip-color) 4%, #fff);
+    border: 1px solid color-mix(in srgb, var(--trip-color) 18%, transparent);
+}
+
+.trip__details summary i {
+    color: var(--trip-color);
+}
+
+.route--cities .route__stop {
+    border-color: color-mix(in srgb, var(--trip-color) 35%, transparent);
+}
+
+.trip__details summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    cursor: pointer;
+    font-size: .92rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.trip__details summary::-webkit-details-marker {
+    display: none;
+}
+
+.trip__details summary::after {
+    content: '\f078';
+    margin-left: auto;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: .75rem;
+    transition: transform .25s ease;
+}
+
+.trip__details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.trip__details-count {
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.trip__photos {
+    margin-bottom: 1rem;
+}
+
+.trip__photos img {
+    height: 180px;
+}
+
+.trip__links {
+    gap: .6rem;
+}
+
+button.pill-link {
+    font: inherit;
+    cursor: pointer;
+}
+
+.trip__links .pill-link {
+    padding: .5rem 1.05rem;
+    font-size: .9rem;
+}
+
+.trip__map-btn {
+    color: var(--navy);
+}
+
+
+/* ---------- Map ---------- */
+.travel-map {
+    position: sticky;
+    top: 76px;
+    padding: 12px;
+    border-radius: 22px;
+    scroll-margin-top: 76px;
+}
+
+.travel-map[hidden] {
+    display: none;
+}
+
+.travel-map__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 2px 6px 10px;
+}
+
+.travel-map__title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.travel-map__title i {
+    color: var(--primary);
+}
+
+.map-reset {
+    font: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(36, 78, 136, .12);
+    background: rgba(255, 255, 255, .85);
+    color: var(--navy);
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.map-reset:hover {
+    background: #fff;
+}
+
+.travel-map__canvas {
+    position: relative;
+    z-index: 0;
+    height: min(62vh, 500px);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #dfeaf6;
+}
+
+.travel-map__canvas.leaflet-container {
+    font-family: inherit;
+}
+
+/* 国旗のピン */
+.map-pin-wrap {
+    background: none;
+    border: 0;
+}
+
+.map-pin {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(24, 44, 78, .35);
+    transition: transform .2s ease;
+}
+
+.map-pin .fi.fis {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.map-pin .fi.fis::before {
+    content: none;
+}
+
+.map-pin-wrap:hover .map-pin {
+    transform: scale(1.2);
+}
+
+.map-pin--via {
+    border-width: 1.5px;
+}
+
+/* ポップアップ */
+.map-pop__city {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 6px !important;
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.map-pop__city .fi {
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .08);
+}
+
+.map-pop__city small {
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.map-pop__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.map-pop__list a {
+    display: flex;
+    gap: 8px;
+    padding: 3px 0;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.map-pop__list a:hover {
+    text-decoration: underline;
+}
+
+.map-pop__when {
+    flex-shrink: 0;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+    .travel-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .travel-map {
+        position: relative;
+        top: auto;
+        order: -1;
+    }
+
+    .travel-map__canvas {
+        height: 340px;
+    }
+}
+
+@media (max-width: 640px) {
+    .travel-stats {
+        gap: 10px;
+    }
+
+    .stat {
+        padding: 1rem .5rem;
+    }
+
+    .stat__label {
+        font-size: .76rem;
+        white-space: nowrap;
+    }
+
+    .travel-filter__label {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .trip {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* 半券を上部に横並びで配置 */
+    .trip__stub {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 4px 12px;
+        padding: .9rem 1.25rem;
+        border-radius: 22px 22px 0 0;
+        border-right: 0;
+        border-bottom: 2px dashed rgba(36, 78, 136, .16);
+    }
+
+
+    .trip__stub-icon {
+        margin: 0;
+    }
+
+    .trip__year {
+        font-size: 1.5rem;
+    }
+
+    .trip-badge {
+        margin-top: 0;
+    }
+
+    .trip__main {
+        padding: 1.25rem;
+    }
+
+    .trip__flags .fi {
+        font-size: 28px;
+    }
+}

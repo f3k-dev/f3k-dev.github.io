@@ -157,6 +157,7 @@
 
 .portfolio-header .section__title {
     font-size: clamp(32px, 5vw, 48px);
+    margin-left: 0; /* 中央揃えなので .section__title の左マージンを打ち消す */
     margin-bottom: 1rem;
     background: var(--grad-1);
     -webkit-background-clip: text;

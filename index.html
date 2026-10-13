@@ -123,7 +123,7 @@
         <article class="card glass">
           <h3 data-ja="基本情報" data-en="Basic Information"></h3>
           <ul class="about__meta">
-            <li><span class="k" data-ja="年齢" data-en="Age"></span><span class="v" data-ja="23"></span></li>
+            <li><span class="k" data-ja="年齢" data-en="Age"></span><span class="v" data-birthdate="2003-08-29" data-ja=""></span></li>
             <li><span class="k" data-ja="居住地" data-en="Location"></span><span class="v" data-ja="福岡県 / 北九州市"
                 data-en="Kitakyushu City, Fukuoka, Japan"></span></li>
             <li><span class="k" data-ja="出身地" data-en="Hometown"></span><span class="v" data-ja="京都府 / 大山崎町"
@@ -139,9 +139,19 @@
 
         <article class="card glass">
           <h3 data-ja="趣味" data-en="Hobby"></h3>
-          <p data-ja="アプリ開発, Google map,<a href='videos.html' style='text-decoration: underline; color: inherit;'>動画編集</a>" data-en="App Development, Google map,<a href='videos.html' style='text-decoration: underline; color: inherit;'>Video Editing</a>"></p>
-          <p class="margin-top0" data-ja="旅行 🇸🇬🇦🇺🇰🇷🇹🇭🇭🇰🇹🇼🇨🇳🇹🇷🇪🇬"
-            data-en="Travel  🇸🇬🇦🇺🇰🇷🇹🇭🇭🇰🇹🇼🇨🇳🇹🇷🇪🇬"></p>
+          <p data-ja="アプリ開発, Google map" data-en="App Development, Google map"></p>
+          <div class="hobby-links">
+            <a class="hobby-btn" href="videos.html">
+              <i class="fa-solid fa-video"></i>
+              <span data-ja="動画編集" data-en="Video Editing"></span>
+              <i class="fa-solid fa-arrow-right hobby-btn__arrow"></i>
+            </a>
+            <a class="hobby-btn" href="travel.html">
+              <i class="fa-solid fa-plane"></i>
+              <span data-ja="旅行" data-en="Travel"></span>
+              <i class="fa-solid fa-arrow-right hobby-btn__arrow"></i>
+            </a>
+          </div>
         </article>
 
         <!-- <article class="card glass">
@@ -349,7 +359,7 @@
         <ul class="pubs">
           <!----------------------------------------------->
           <li class="pub glass" data-authorship="first">
-            <div class="pub__number">[9]</div>
+            <div class="pub__number">[10]</div>
             <div class="pub__content">
               <p class="pub__text">
                 <span data-en="<b>Kazuma Futami</b>, Yuga Yano, Hakaru Tamukoh"></span>,
@@ -357,6 +367,19 @@
                 <i data-en="<b>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</b>"></i>,
                 <span data-en="Pittsburgh, PA, USA, 2026"></span>.
                 <a class="link" href="https://2026.ieee-iros.org/" data-ja="[Link]" data-en="[Link]"></a>
+              </p>
+            </div>
+          </li>
+          <!----------------------------------------------->
+          <li class="pub glass" data-authorship="first">
+            <div class="pub__number">[9]</div>
+            <div class="pub__content">
+              <p class="pub__text">
+                <span data-ja="<b>⼆⾒ 和磨</b>, ⼩林 遼平, ⼩林 凌空, 榊原 琉世, 渡辺 太貴, ムン チャンホ, 鈴⽊ 琉⾺, 渡辺 魁⼈, 有村 幸峻, 下村 晃⽣, 麓 宗⾺, 明⽯ 凜太郎, 福⽥ 拓真, 渡邉 治彦, 井上 直翔, ⼤橋 遼⼠, ⽥中 将栄, ⼭⼝ 旦, セーニ ロハン, 磯本 航世, ⼭⼝ 直紀, ⽮野 優雅, ⽔⾕ 彰伸, ⽥中 悠⼀朗, ⽥向 権"></span>,
+                "<span data-ja="RoboCup@Home2026 OPL における Hibikino-Musashi@Home の取り組み"></span>,"
+                <i data-ja="第15回インテリジェントホームロボティクス研究会"></i>,
+                <span data-ja="八王子, 2026"></span>.
+                <a class="link" href="https://www.i-homerobotics.org/" data-ja="[Link]" data-en="[Link]"></a>
               </p>
             </div>
           </li>
@@ -409,7 +432,7 @@
             <div class="pub__content">
               <p class="pub__text">
                 <span data-en="<b>Kazuma Futami</b>, Yuga Yano, Hakaru Tamukoh"></span>, 
-                <!-- <span data-ja=", "></span> -->
+                "<span data-en="Failure Prediction and Explicit Conditioning for Failure Recovery in Visual Navigation​"></span>,"
                 <i data-en="The 8th International Symposium on Neuromorphic AI Hardware"></i>, 
                 <span data-en="Kitakyushu, 2026"></span>. 
                 <a class="link" href="https://www.brain.kyutech.ac.jp/~neuro/" data-ja="[Link]"></a>
@@ -422,7 +445,7 @@
             <div class="pub__content">
               <p class="pub__text">
                 <span data-ja="<b>二見 和磨</b>, 矢野 優雅, 田向 権"></span>, 
-                <!-- <span data-ja=", "></span> -->
+                "<span data-ja="視覚情報を用いたナビゲーションにおける失敗の事前検知と回復行動生成​"></span>,"
                 <i data-ja="第14回インテリジェントホームロボティクス研究会"></i>, 
                 <span data-ja="名古屋, 2026"></span>. 
                 <a class="link" href="https://www.kayamorif.or.jp/30th/" data-ja="[リンク]"></a>

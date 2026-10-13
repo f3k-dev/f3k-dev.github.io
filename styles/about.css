@@ -24,6 +24,20 @@
 
 
 
+/* ==== Hobby: 動画・旅行ページへのボタン ==== */
+.hobby-links{ display:flex; flex-wrap:wrap; gap:10px; margin: 0 0 18px; }
+.hobby-btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 18px; border-radius:999px;
+  font-weight:600; text-decoration:none; color:#fff;
+  background: var(--grad-1);
+  box-shadow: 0 8px 20px rgba(74,135,224,.32);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.hobby-btn__arrow{ font-size:.85em; transition: transform .2s ease; }
+.hobby-btn:hover{ transform: translateY(-2px); box-shadow: 0 12px 28px rgba(74,135,224,.42); }
+.hobby-btn:hover .hobby-btn__arrow{ transform: translateX(4px); }
+
 .about__meta{display:grid; gap:6px; padding:0; margin:0 0 16px 0; list-style:none}
 .about__meta li{display:grid; grid-template-columns: 100px 1fr; gap:10px}
 .about__meta .k{color: var(--muted)}
