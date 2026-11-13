@@ -22,21 +22,21 @@
  * ========================================================= */
 
 const TRIPS = [
-  {
-    title: { en: 'Busan Trip' },
-    start: '2026-12-06', end: '2026-12-08',
-    purpose: ['sightseeing'],
-    // note: { ja: 'UPMに訪問', en: 'Presenting at IROS 2026' },
-    city: [
-      { country: 'kr', city: { en: 'Busan' }},
-    ],
-    stops: [
-      { country: 'jp', city: { en: 'Fukuoka (FUK)' }, lat: 33.5902, lng: 130.4017, by: 'plane' },
-      { country: 'kr', city: { en: 'Busan (PUS)' }, lat: 35.1796, lng: 129.0756, by: 'plane' },
-      { country: 'jp', city: { en: 'Fukuoka (FUK)' }, lat: 33.5902, lng: 130.4017, by: 'plane' },
-    ],
-    // tbd: true,
-  },
+  // {
+  //   title: { en: 'Busan Trip' },
+  //   start: '2026-12-06', end: '2026-12-08',
+  //   purpose: ['sightseeing'],
+  //   // note: { ja: 'UPMに訪問', en: 'Presenting at IROS 2026' },
+  //   city: [
+  //     { country: 'kr', city: { en: 'Busan' }},
+  //   ],
+  //   stops: [
+  //     { country: 'jp', city: { en: 'Fukuoka (FUK)' }, lat: 33.5902, lng: 130.4017, by: 'plane' },
+  //     { country: 'kr', city: { en: 'Busan (PUS)' }, lat: 35.1796, lng: 129.0756, by: 'plane' },
+  //     { country: 'jp', city: { en: 'Fukuoka (FUK)' }, lat: 33.5902, lng: 130.4017, by: 'plane' },
+  //   ],
+  //   // tbd: true,
+  // },
 
   {
     title: { en: 'UPM Visit' },

@@ -68,7 +68,7 @@
     pubFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => applyPubFilter(btn.dataset.pubFilter));
     });
-    applyPubFilter('first');
+    applyPubFilter('all');//初期値切り替え
   }
 
   // --- News bar: 内容(data-ja / data-en)があれば表示、両方空なら非表示 ---
